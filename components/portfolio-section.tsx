@@ -78,6 +78,7 @@ export function PortfolioSection() {
               key={project.titleKey}
               className="group relative overflow-hidden rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-700 animate-fade-in-up cursor-pointer hover:shadow-2xl hover:shadow-primary/10"
               style={{ animationDelay: `${index * 0.2}s` }}
+              onClick={() => window.open(project.url, '_blank')}
             >
               <div className="aspect-[4/3] overflow-hidden relative">
                 <Image
@@ -110,7 +111,10 @@ export function PortfolioSection() {
                     variant="outline"
                     size="sm"
                     className="group/btn bg-background/80 backdrop-blur-sm border-primary/30 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                    onClick={() => window.open(project.url, '_blank')}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      window.open(project.url, '_blank')
+                    }}
                   >
                     Ver Proyecto
                     <Eye className="ml-2 h-4 w-4 transition-transform group-hover/btn:scale-110" />
@@ -120,7 +124,10 @@ export function PortfolioSection() {
 
               <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-y-2 group-hover:translate-y-0">
                 <button
-                  onClick={() => window.open(project.url, '_blank')}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    window.open(project.url, '_blank')
+                  }}
                   className="w-12 h-12 bg-primary/20 backdrop-blur-md rounded-full flex items-center justify-center border border-primary/30 hover:bg-primary/30 transition-colors duration-300"
                 >
                   <ExternalLink className="h-5 w-5 text-primary" />
