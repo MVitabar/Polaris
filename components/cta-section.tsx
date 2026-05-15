@@ -91,7 +91,7 @@ export function CTASection() {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || 'Error al enviar el mensaje');
+        throw new Error(result.error || t("cta.form.error.general"));
       }
       
       // Mostrar mensaje de éxito
@@ -99,14 +99,14 @@ export function CTASection() {
       reset();
       
     } catch (error) {
-      console.error('Error al enviar el mensaje:', error);
-      let errorMessage = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.';
+      console.error('Error sending message:', error);
+      let errorMessage = t("cta.form.error.general");
       
       if (error instanceof Error) {
         if (error.message.includes('autenticación') || error.message.includes('401')) {
-          errorMessage = 'Error de autenticación. Por favor, verifica la configuración del servidor de correo.';
+          errorMessage = t("cta.form.error.auth");
         } else if (error.message.includes('certificate')) {
-          errorMessage = 'Error de conexión segura. Por favor, inténtalo de nuevo más tarde.';
+          errorMessage = t("cta.form.error.connection");
         }
       }
       
@@ -122,16 +122,16 @@ export function CTASection() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-2xl mx-auto bg-background/80 backdrop-blur-sm p-8 rounded-xl shadow-lg">
             <h2 className="text-3xl md:text-4xl font-sans font-bold text-foreground mb-6">
-              ¡Gracias por contactarnos!
+              {t("cta.form.success.title")}
             </h2>
             <p className="text-lg text-muted-foreground font-serif mb-8">
-              Hemos recibido tu mensaje y nos pondremos en contacto contigo a la brevedad.
+              {t("cta.form.success.message")}
             </p>
             <Button 
               onClick={() => setIsSubmitted(false)}
               className="bg-primary hover:bg-primary/90 transition-colors"
             >
-              Enviar otro mensaje
+              {t("cta.form.success.button")}
             </Button>
           </div>
         </div>
@@ -150,26 +150,26 @@ export function CTASection() {
         <div className="max-w-3xl mx-auto bg-background/80 backdrop-blur-sm p-8 rounded-xl shadow-lg">
           <ScrollReveal direction="up">
             <h2 className="text-3xl md:text-4xl font-sans font-bold text-foreground mb-2 text-center">
-              Contáctanos
+              {t("cta.form.title")}
             </h2>
             <p className="text-muted-foreground font-serif text-center mb-8">
-              Completa el formulario y nos pondremos en contacto contigo a la brevedad.
+              {t("cta.form.subtitle")}
             </p>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Nombre completo</Label>
+                  <Label htmlFor="name">{t("cta.form.name")}</Label>
                   <Input
                     id="name"
-                    placeholder="Tu nombre"
+                    placeholder={t("cta.form.name.placeholder")}
                     {...register('name', { 
-                      required: 'El nombre es requerido',
+                      required: t("cta.form.name.required"),
                       minLength: {
                         value: 2,
-                        message: 'El nombre debe tener al menos 2 caracteres'
+                        message: t("cta.form.name.minlength")
                       },
-                      validate: (value) => value && value.trim().length > 0 ? true : 'El nombre no puede estar vacío'
+                      validate: (value) => value && value.trim().length > 0 ? true : t("cta.form.name.empty")
                     })}
                     onChange={(e) => {
                       setValue('name', e.target.value, { shouldValidate: true });
@@ -182,18 +182,18 @@ export function CTASection() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">Correo electrónico</Label>
+                  <Label htmlFor="email">{t("cta.form.email")}</Label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="tucorreo@ejemplo.com"
+                    placeholder={t("cta.form.email.placeholder")}
                     {...register('email', {
-                      required: 'El correo es requerido',
+                      required: t("cta.form.email.required"),
                       pattern: {
                         value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                        message: 'Correo electrónico no válido'
+                        message: t("cta.form.email.invalid")
                       },
-                      validate: (value) => value && value.trim().length > 0 ? true : 'El correo es requerido'
+                      validate: (value) => value && value.trim().length > 0 ? true : t("cta.form.email.empty")
                     })}
                     onChange={(e) => {
                       setValue('email', e.target.value, { shouldValidate: true });
@@ -207,11 +207,11 @@ export function CTASection() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="phone">Teléfono (opcional)</Label>
+                <Label htmlFor="phone">{t("cta.form.phone")}</Label>
                 <Input
                   id="phone"
                   type="tel"
-                  placeholder="+54 9 11 1234-5678"
+                  placeholder={t("cta.form.phone.placeholder")}
                   className="w-full"
                   {...register('phone')}
                   onChange={(e) => {
@@ -222,18 +222,18 @@ export function CTASection() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">Mensaje</Label>
+                <Label htmlFor="message">{t("cta.form.message")}</Label>
                 <Textarea
                   id="message"
-                  placeholder="Cuéntanos cómo podemos ayudarte..."
+                  placeholder={t("cta.form.message.placeholder")}
                   rows={4}
                   {...register('message', { 
-                    required: 'El mensaje es requerido',
+                    required: t("cta.form.message.required"),
                     minLength: {
                       value: 10,
-                      message: 'El mensaje debe tener al menos 10 caracteres'
+                      message: t("cta.form.message.minlength")
                     },
-                    validate: (value) => value && value.trim().length >= 10 ? true : 'El mensaje debe tener al menos 10 caracteres'
+                    validate: (value) => value && value.trim().length >= 10 ? true : t("cta.form.message.empty")
                   })}
                   onChange={(e) => {
                     setValue('message', e.target.value, { shouldValidate: true });
@@ -255,7 +255,7 @@ export function CTASection() {
                   className="h-4 w-4"
                 />
                 <Label htmlFor="marketingConsent" className="text-sm font-normal leading-none">
-                  Me gustaría recibir actualizaciones y ofertas por correo electrónico o SMS
+                  {t("cta.form.consent")}
                 </Label>
               </div>
 
@@ -272,10 +272,10 @@ export function CTASection() {
                   className="w-full sm:w-auto bg-primary hover:bg-primary/90 transition-colors group"
                 >
                   {isSubmitting ? (
-                    'Enviando...'
+                    t("cta.form.submitting")
                   ) : (
                     <>
-                      Enviar mensaje
+                      {t("cta.form.submit")}
                       <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </>
                   )}
