@@ -89,12 +89,14 @@ const translations: Record<Language, Record<string, string>> = {
     // Portfolio Section
     "portfolio.title": "Nuestro Portafolio",
     "portfolio.subtitle": "Proyectos que marcan el rumbo",
-    "portfolio.project1.title": "E-commerce Innovador",
-    "portfolio.project1.desc": "Plataforma de comercio electrónico con IA integrada",
-    "portfolio.project2.title": "App Corporativa",
-    "portfolio.project2.desc": "Aplicación móvil para gestión empresarial",
-    "portfolio.project3.title": "Portal Educativo",
-    "portfolio.project3.desc": "Plataforma de aprendizaje online interactiva",
+    "portfolio.project1.title": "M Vitabar | 3D Artist",
+    "portfolio.project1.desc": "Portfolio profesional de artista 3D especializado en visualización de productos y CGI fotorealista",
+    "portfolio.project2.title": "TOP SECRET TATTOO",
+    "portfolio.project2.desc": "Estudio de tatuajes con galería de trabajos, servicios de tatuaje realista y sistema de agendamiento",
+    "portfolio.project3.title": "Delicias da Rafa",
+    "portfolio.project3.desc": "E-commerce de cestas de café da mañana y lanches con sistema de pedidos y catálogo de productos",
+    "portfolio.project4.title": "Era de Prata",
+    "portfolio.project4.desc": "Sitio artístico abstracto con experiencia inmersiva, tienda de merch y contenido musical exclusivo",
 
     // Process Section
     "process.title": "Nuestro Proceso",
@@ -184,12 +186,14 @@ const translations: Record<Language, Record<string, string>> = {
     // Portfolio Section
     "portfolio.title": "Our Portfolio",
     "portfolio.subtitle": "Projects that set the course",
-    "portfolio.project1.title": "Innovative E-commerce",
-    "portfolio.project1.desc": "E-commerce platform with integrated AI",
-    "portfolio.project2.title": "Corporate App",
-    "portfolio.project2.desc": "Mobile application for business management",
-    "portfolio.project3.title": "Educational Portal",
-    "portfolio.project3.desc": "Interactive online learning platform",
+    "portfolio.project1.title": "M Vitabar | 3D Artist",
+    "portfolio.project1.desc": "Professional 3D artist portfolio specializing in product visualization and photorealistic CGI",
+    "portfolio.project2.title": "TOP SECRET TATTOO",
+    "portfolio.project2.desc": "Tattoo studio with work gallery, realistic tattoo services, and appointment scheduling system",
+    "portfolio.project3.title": "Delicias da Rafa",
+    "portfolio.project3.desc": "E-commerce for breakfast baskets and snacks with ordering system and product catalog",
+    "portfolio.project4.title": "Era de Prata",
+    "portfolio.project4.desc": "Abstract artistic site with immersive experience, merch store, and exclusive music content",
 
     // Process Section
     "process.title": "Our Process",
@@ -280,12 +284,14 @@ const translations: Record<Language, Record<string, string>> = {
     // Portfolio Section
     "portfolio.title": "Nosso Portfólio",
     "portfolio.subtitle": "Projetos que marcam o rumo",
-    "portfolio.project1.title": "E-commerce Inovador",
-    "portfolio.project1.desc": "Plataforma de comércio eletrônico com IA integrada",
-    "portfolio.project2.title": "App Corporativo",
-    "portfolio.project2.desc": "Aplicação móvel para gestão empresarial",
-    "portfolio.project3.title": "Portal Educacional",
-    "portfolio.project3.desc": "Plataforma de aprendizagem online interativa",
+    "portfolio.project1.title": "M Vitabar | 3D Artist",
+    "portfolio.project1.desc": "Portfólio profissional de artista 3D especializado em visualização de produtos e CGI fotorealista",
+    "portfolio.project2.title": "TOP SECRET TATTOO",
+    "portfolio.project2.desc": "Estúdio de tatuagem com galeria de trabalhos, serviços de tatuagem realista e sistema de agendamento",
+    "portfolio.project3.title": "Delicias da Rafa",
+    "portfolio.project3.desc": "E-commerce de cestas de café da manhã e lanches com sistema de pedidos e catálogo de produtos",
+    "portfolio.project4.title": "Era de Prata",
+    "portfolio.project4.desc": "Site artístico abstrato com experiência imersiva, loja de merch e conteúdo musical exclusivo",
 
     // Process Section
     "process.title": "Nosso Processo",
