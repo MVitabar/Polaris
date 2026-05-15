@@ -17,7 +17,7 @@ export function PortfolioSection() {
     {
       titleKey: "portfolio.project1.title",
       descKey: "portfolio.project1.desc",
-      image: "/portfolio-images/project1-3d-portfolio.jpg",
+      image: "/portfolio-images/3dartist.png",
       fallbackImage: "/placeholder.svg",
       category: "3D Portfolio",
       url: "https://portfolio3d-seven-alpha.vercel.app/",
@@ -25,7 +25,7 @@ export function PortfolioSection() {
     {
       titleKey: "portfolio.project2.title",
       descKey: "portfolio.project2.desc",
-      image: "/portfolio-images/project2-tattoo-studio.jpg",
+      image: "/portfolio-images/tattoo.png",
       fallbackImage: "/placeholder.svg",
       category: "Tattoo Studio",
       url: "https://my-tattoo-page-one.vercel.app/",
@@ -33,7 +33,7 @@ export function PortfolioSection() {
     {
       titleKey: "portfolio.project3.title",
       descKey: "portfolio.project3.desc",
-      image: "/portfolio-images/project3-delicias-rafa.jpg",
+      image: "/portfolio-images/cestas.png",
       fallbackImage: "/placeholder.svg",
       category: "E-commerce",
       url: "https://deliciasrafa.vercel.app/",
@@ -41,7 +41,7 @@ export function PortfolioSection() {
     {
       titleKey: "portfolio.project4.title",
       descKey: "portfolio.project4.desc",
-      image: "/portfolio-images/project4-era-de-prata.jpg",
+      image: "/portfolio-images/eradeprata.png",
       fallbackImage: "/placeholder.svg",
       category: "Artistic Site",
       url: "https://eradeprata-site.vercel.app/",
