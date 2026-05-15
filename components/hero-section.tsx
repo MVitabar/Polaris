@@ -102,8 +102,8 @@ export function HeroSection() {
                 }}
               >
                 <Image
-                  src="/modern-web-development-workspace-with-multiple-scr.jpg"
-                  alt="Desarrollo web profesional"
+                  src="/dashboard-application-interface-with-charts-and-da.jpg"
+                  alt="Dashboard tecnológico"
                   width={800}
                   height={600}
                   className="w-full h-auto"
