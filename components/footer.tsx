@@ -111,8 +111,8 @@ export function Footer() {
             <div className="space-y-4 font-serif text-sm pt-4">
               <div className="flex items-center space-x-3 text-muted-foreground hover:text-foreground transition-colors duration-200">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <a href="mailto:vitabarmartin@gmail.com" className="truncate">
-                  vitabarmartin@gmail.com
+                <a href="mailto:contato@polaristudio.com.br" className="truncate">
+                  contato@polaristudio.com.br
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-muted-foreground hover:text-foreground transition-colors duration-200">

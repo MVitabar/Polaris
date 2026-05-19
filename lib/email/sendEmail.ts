@@ -22,7 +22,8 @@ export async function sendEmail(data: {
 
   // Configurar el correo electrónico
   const mailOptions = {
-    from: emailConfig.from,
+    from: `"${data.name}" <${emailConfig.auth.user}>`, // Muestra el nombre de quien escribe, enviado a través del SMTP autenticado
+    replyTo: data.email, // Permite responder directamente al correo del cliente
     to: emailConfig.to,
     subject: `Nuevo mensaje de contacto de ${data.name}`,
     html: `
