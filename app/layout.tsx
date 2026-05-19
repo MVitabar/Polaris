@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: 'Polaris Studio',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Polaris Studio - Guiamos tu rumbo digital',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Polaris Studio - Guiamos tu rumbo digital',
     description: 'Agencia de desarrollo web especializada en landing pages, aplicaciones web, e-commerce y consultoría digital.',
-    images: ['/images/og-image.jpg'],
+    images: ['/images/og-image.png'],
     creator: '@polarisstudio',
   },
   robots: {
@@ -76,18 +76,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/logo-polaris.png', sizes: '32x32', type: 'image/png' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png' },
-    ],
-    other: [
-      {
-        rel: 'mask-icon',
-        url: '/safari-pinned-tab.svg',
-        color: '#5bbad5',
-      },
+      { url: '/images/logo-polaris.png' },
     ],
   },
   manifest: '/site.webmanifest',

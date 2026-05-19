@@ -45,7 +45,7 @@ export function ServicesSection() {
   ]
 
   return (
-    <section className="relative py-24 bg-muted/30 overflow-hidden">
+    <section className="relative py-24 bg-muted/10 overflow-hidden">
       <ParallaxBackground speed={0.3} className="opacity-10">
         <div
           className="absolute top-0 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl"
@@ -66,9 +66,10 @@ export function ServicesSection() {
       </ParallaxBackground>
 
       <div className="container mx-auto px-4 relative z-10">
-        <ScrollReveal direction="rotate" delay={0} duration={1400}>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-sans font-bold text-foreground mb-6 text-balance transform hover:scale-105 transition-transform duration-500">
+        <ScrollReveal direction="scale" delay={0} duration={1200}>
+          <div className="text-center mb-20">
+            <span className="section-tag mb-4">Nuestros Servicios</span>
+            <h2 className="text-3xl md:text-5xl font-sans font-bold text-foreground mb-6 text-balance tracking-tight">
               {t("services.title")}
             </h2>
             <p className="text-xl text-muted-foreground font-serif max-w-3xl mx-auto leading-relaxed">
@@ -77,27 +78,39 @@ export function ServicesSection() {
           </div>
         </ScrollReveal>
 
-        <StaggeredReveal staggerDelay={200} direction="up" className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <StaggeredReveal staggerDelay={100} direction="up" className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card
               key={index}
-              className="group hover:shadow-2xl transition-all duration-700 hover:-translate-y-6 bg-card border-border transform hover:scale-110 hover:rotate-1 hover:shadow-primary/10"
+              className="group glass-card-hover hover:border-primary/40 relative overflow-hidden transition-all duration-700 bg-card border-border"
               style={{
                 transform: `translateY(${Math.sin((scrollY + index * 100) * 0.002) * 5}px)`,
               }}
             >
-              <CardContent className="p-8 text-center">
-                <div className="mb-6 flex justify-center">
-                  <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/30 transition-all duration-700 group-hover:scale-125 group-hover:rotate-360">
-                    <service.icon className="w-8 h-8 text-primary transition-all duration-500 group-hover:scale-110" />
+              {/* Background gradient on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              
+              {/* Big number index decoration */}
+              <span className="number-bg right-4 top-2 text-primary/5 group-hover:text-primary/10 transition-colors duration-500">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              <CardContent className="p-8 text-left relative z-10 flex flex-col h-full justify-between min-h-[250px]">
+                <div>
+                  <div className="mb-6 flex">
+                    <div className="p-4 rounded-xl bg-primary/5 border border-primary/10 group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-500 group-hover:scale-110">
+                      <service.icon className="w-7 h-7 text-primary transition-all duration-500 group-hover:scale-105" />
+                    </div>
                   </div>
+                  
+                  <h3 className="text-xl font-sans font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                    {t(service.titleKey)}
+                  </h3>
+                  
+                  <p className="text-muted-foreground font-serif leading-relaxed text-sm">
+                    {t(service.descKey)}
+                  </p>
                 </div>
-                <h3 className="text-xl font-sans font-semibold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
-                  {t(service.titleKey)}
-                </h3>
-                <p className="text-muted-foreground font-serif leading-relaxed group-hover:text-foreground transition-colors duration-300">
-                  {t(service.descKey)}
-                </p>
               </CardContent>
             </Card>
           ))}

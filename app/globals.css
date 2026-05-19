@@ -4,26 +4,26 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated theme to match Polaris Studio brand colors */
-  --background: #071b2a; /* Dark blue background */
-  --foreground: #ffffff; /* White text */
-  --card: #0a2235; /* Slightly lighter dark blue for cards */
+  /* Polaris Studio brand colors */
+  --background: #071b2a;
+  --foreground: #ffffff;
+  --card: #0a2235;
   --card-foreground: #ffffff;
   --popover: #0a2235;
   --popover-foreground: #ffffff;
-  --primary: #e8c77f; /* Pale gold primary */
-  --primary-foreground: #071b2a; /* Dark blue text on gold */
-  --secondary: #f4f6f7; /* Light gray */
+  --primary: #e8c77f;
+  --primary-foreground: #071b2a;
+  --secondary: #f4f6f7;
   --secondary-foreground: #071b2a;
-  --muted: #0f2a3d; /* Muted dark blue */
-  --muted-foreground: #b0bec5; /* Light gray text */
-  --accent: #e8c77f; /* Gold accent */
+  --muted: #0f2a3d;
+  --muted-foreground: #b0bec5;
+  --accent: #e8c77f;
   --accent-foreground: #071b2a;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #1a3a4a; /* Subtle border */
+  --border: #1a3a4a;
   --input: #1a3a4a;
-  --ring: #e8c77f; /* Gold focus ring */
+  --ring: #e8c77f;
   --chart-1: #e8c77f;
   --chart-2: #b8a06b;
   --chart-3: #9b8a5c;
@@ -38,6 +38,19 @@
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #1a3a4a;
   --sidebar-ring: #e8c77f;
+
+  /* Extended design tokens */
+  --gold: #e8c77f;
+  --gold-dim: #b8a06b;
+  --gold-glow: rgba(232, 199, 127, 0.25);
+  --gold-border: rgba(232, 199, 127, 0.3);
+  --navy-deep: #040f1a;
+  --navy-mid: #071b2a;
+  --navy-card: #0a2235;
+  --navy-elevated: #0d2840;
+  --navy-border: #1a3a4a;
+  --glass-bg: rgba(10, 34, 53, 0.7);
+  --glass-border: rgba(232, 199, 127, 0.15);
 }
 
 .dark {
@@ -121,42 +134,259 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold-dim) var(--navy-card);
+  }
   body {
     @apply bg-background text-foreground font-serif;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(232, 199, 127, 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(232, 199, 127, 0.04) 0%, transparent 50%);
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     @apply font-sans;
   }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--navy-card);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--gold-dim);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+  }
 }
 
-/* Added constellation animation styles */
+/* ─── Keyframe Animations ─────────────────────────── */
+
 @keyframes constellation {
-  0%,
-  100% {
-    opacity: 0.3;
-    transform: translateY(0px);
-  }
-  50% {
-    opacity: 0.8;
-    transform: translateY(-10px);
+  0%, 100% { opacity: 0.3; transform: translateY(0px); }
+  50% { opacity: 0.8; transform: translateY(-10px); }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(1deg); }
+  66% { transform: translateY(-4px) rotate(-1deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 10px var(--gold-glow), 0 0 20px transparent; }
+  50% { box-shadow: 0 0 20px var(--gold-glow), 0 0 40px var(--gold-glow); }
+}
+
+@keyframes border-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slide-up-fade {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes ping-gold {
+  75%, 100% {
+    transform: scale(1.8);
+    opacity: 0;
   }
 }
 
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Utility Classes ─────────────────────────────── */
+
+/* Glassmorphism card */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-card-hover {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card-hover:hover {
+  border-color: var(--gold-border);
+  box-shadow: 0 0 30px var(--gold-glow), 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Gradient text (gold shimmer) */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--gold) 0%,
+    #f5e1b0 40%,
+    var(--gold) 60%,
+    var(--gold-dim) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Section tag / badge */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(232, 199, 127, 0.08);
+  border: 1px solid rgba(232, 199, 127, 0.25);
+  border-radius: 100px;
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  backdrop-filter: blur(8px);
+}
+
+/* Gold border bottom accent */
+.gold-underline {
+  position: relative;
+}
+
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  border-radius: 2px;
+}
+
+.gold-underline-center::after {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* Gold glow border on cards */
+.gold-glow-border {
+  box-shadow: 0 0 0 1px var(--glass-border), 0 0 20px var(--gold-glow);
+}
+
+/* Float animation */
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+/* Ping gold */
+.animate-ping-gold {
+  animation: ping-gold 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Gradient X animate */
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 4s ease infinite;
+}
+
+/* Number decoration */
+.number-bg {
+  position: absolute;
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 800;
+  font-size: 7rem;
+  line-height: 1;
+  color: rgba(232, 199, 127, 0.05);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.05em;
+}
+
+/* Stat separator */
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--gold-border), transparent);
+}
+
+/* Constellation line (preserved) */
 .constellation-line {
   animation: constellation 4s ease-in-out infinite;
 }
 
-.constellation-line:nth-child(2) {
-  animation-delay: 0.5s;
+.constellation-line:nth-child(2) { animation-delay: 0.5s; }
+.constellation-line:nth-child(3) { animation-delay: 1s; }
+.constellation-line:nth-child(4) { animation-delay: 1.5s; }
+
+/* Input focus gold */
+.input-gold:focus {
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 2px var(--gold-glow) !important;
+  outline: none;
 }
-.constellation-line:nth-child(3) {
-  animation-delay: 1s;
+
+/* Nav link with animated underline */
+.nav-link {
+  position: relative;
+  color: var(--muted-foreground);
+  transition: color 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding-bottom: 2px;
 }
-.constellation-line:nth-child(4) {
-  animation-delay: 1.5s;
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  color: var(--foreground);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+  z-index: 100;
+  transition: width 0.1s linear;
 }
