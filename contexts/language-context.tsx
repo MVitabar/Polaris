@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { createContext, useContext, useState, useEffect } from "react"
+import { useRouter, usePathname } from "next/navigation"
 
 export type Language = "es" | "en" | "pt"
 
@@ -21,21 +22,54 @@ export function useLanguage() {
   return context
 }
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>("es")
+export function LanguageProvider({ 
+  children, 
+  initialLanguage 
+}: { 
+  children: React.ReactNode
+  initialLanguage?: Language 
+}) {
+  const [language, setLanguage] = useState<Language>(initialLanguage || "es")
+  const router = useRouter()
+  const pathname = usePathname()
 
-  // Load saved language preference
+  // Detect language from URL on mount (only if no initialLanguage provided)
   useEffect(() => {
-    const saved = localStorage.getItem("polaris-language") as Language
-    if (saved && ["es", "en", "pt"].includes(saved)) {
-      setLanguage(saved)
+    if (initialLanguage) return // Skip if initialLanguage is provided
+    
+    const pathLocale = pathname.split('/')[1] as Language
+    const validLocales = ['es', 'en', 'pt']
+    
+    if (validLocales.includes(pathLocale)) {
+      setLanguage(pathLocale)
+      localStorage.setItem("polaris-language", pathLocale)
+    } else {
+      // Load saved language preference if no locale in URL
+      const saved = localStorage.getItem("polaris-language") as Language
+      if (saved && validLocales.includes(saved)) {
+        setLanguage(saved)
+      }
     }
-  }, [])
+  }, [pathname, initialLanguage])
 
-  // Save language preference
+  // Save language preference and update URL when language changes
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang)
     localStorage.setItem("polaris-language", lang)
+    
+    // Update URL to reflect new language
+    const currentPath = pathname
+    const pathLocale = currentPath.split('/')[1]
+    const validLocales = ['es', 'en', 'pt']
+    
+    if (validLocales.includes(pathLocale)) {
+      // Replace current locale with new locale
+      const newPath = currentPath.replace(`/${pathLocale}`, `/${lang}`)
+      router.push(newPath)
+    } else {
+      // If no locale in URL, redirect to new locale
+      router.push(`/${lang}`)
+    }
   }
 
   const t = (key: string): string => {

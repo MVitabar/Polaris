@@ -6,7 +6,6 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
-import { LanguageProvider } from "@/contexts/language-context"
 import { HtmlLangProvider } from "@/components/html-lang-provider"
 
 const poppins = Poppins({
@@ -77,9 +76,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.polaristudio.com.br',
     languages: {
-      'es': 'https://www.polaristudio.com.br',
-      'en': 'https://www.polaristudio.com.br',
-      'pt': 'https://www.polaristudio.com.br',
+      'es': 'https://www.polaristudio.com.br/es',
+      'en': 'https://www.polaristudio.com.br/en',
+      'pt': 'https://www.polaristudio.com.br/pt',
       'x-default': 'https://www.polaristudio.com.br',
     },
   },
@@ -103,13 +102,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${poppins.variable} ${lora.variable} ${GeistMono.variable} antialiased`}>
-        <LanguageProvider>
-          <HtmlLangProvider />
-          <Suspense fallback={<div>Loading...</div>}>
-            {children}
-            <Analytics />
-          </Suspense>
-        </LanguageProvider>
+        <Suspense fallback={<div>Loading...</div>}>
+          {children}
+          <Analytics />
+        </Suspense>
       </body>
     </html>
   )

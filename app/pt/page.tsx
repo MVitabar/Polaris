@@ -1,0 +1,72 @@
+import { HeroSection } from "@/components/hero-section"
+import { StatsBand } from "@/components/stats-band"
+import { ServicesSection } from "@/components/services-section"
+import { PortfolioSection } from "@/components/portfolio-section"
+import { ProcessSection } from "@/components/process-section"
+import { TestimonialsSection } from "@/components/testimonials-section"
+import { CTASection } from "@/components/cta-section"
+import { Footer } from "@/components/footer"
+import { NavigationHeader } from "@/components/navigation-header"
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Início | Polaris Studio - Agência de Desenvolvimento Web',
+  description: 'Bem-vindo ao Polaris Studio, sua agência de desenvolvimento web. Criamos experiências digitais únicas e eficazes para o seu negócio. Especialistas em design web, aplicativos móveis e e-commerce.',
+  alternates: {
+    canonical: 'https://www.polaristudio.com.br/pt',
+    languages: {
+      'es': 'https://www.polaristudio.com.br/es',
+      'en': 'https://www.polaristudio.com.br/en',
+      'pt': 'https://www.polaristudio.com.br/pt',
+      'x-default': 'https://www.polaristudio.com.br',
+    },
+  },
+  openGraph: {
+    title: 'Início | Polaris Studio - Agência de Desenvolvimento Web',
+    description: 'Bem-vindo ao Polaris Studio, sua agência de desenvolvimento web. Criamos experiências digitais únicas e eficazes para o seu negócio.',
+    url: 'https://www.polaristudio.com.br/pt',
+    type: 'website',
+    images: [
+      {
+        url: '/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Polaris Studio - Guiamos seu rumo digital',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Início | Polaris Studio - Agência de Desenvolvimento Web',
+    description: 'Bem-vindo ao Polaris Studio, sua agência de desenvolvimento web. Criamos experiências digitais únicas e eficazes para o seu negócio.',
+    images: ['/images/og-image.png'],
+  },
+}
+
+export default function Home() {
+  return (
+    <>
+      <NavigationHeader />
+      <main className="min-h-screen relative animate-fade-in">
+        <div id="hero">
+          <HeroSection />
+        </div>
+        <StatsBand />
+        <div id="services">
+          <ServicesSection />
+        </div>
+        <div id="portfolio">
+          <PortfolioSection />
+        </div>
+        <div id="process">
+          <ProcessSection />
+        </div>
+        <TestimonialsSection />
+        <div id="contact">
+          <CTASection />
+        </div>
+        <Footer />
+      </main>
+    </>
+  )
+}
