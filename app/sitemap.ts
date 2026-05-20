@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://polaris-studio.vercel.app'
+  const baseUrl = 'https://www.polaristudio.com.br'
   
   return [
     {
@@ -9,6 +9,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
+      alternates: {
+        languages: {
+          es: baseUrl,
+          en: baseUrl,
+          pt: baseUrl,
+          xdefault: baseUrl,
+        },
+      },
     },
     {
       url: `${baseUrl}/#services`,

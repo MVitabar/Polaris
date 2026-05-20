@@ -10,15 +10,21 @@ import { NavigationHeader } from "@/components/navigation-header"
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Inicio | Polaris Studio',
-  description: 'Bienvenido a Polaris Studio, tu agencia de desarrollo web. Creamos experiencias digitales únicas y efectivas para tu negocio.',
+  title: 'Inicio | Polaris Studio - Agencia de Desarrollo Web',
+  description: 'Bienvenido a Polaris Studio, tu agencia de desarrollo web. Creamos experiencias digitales únicas y efectivas para tu negocio. Especialistas en diseño web, aplicaciones móviles y e-commerce.',
   alternates: {
-    canonical: 'https://polaris-studio.vercel.app',
+    canonical: 'https://www.polaristudio.com.br',
+    languages: {
+      'es': 'https://www.polaristudio.com.br',
+      'en': 'https://www.polaristudio.com.br',
+      'pt': 'https://www.polaristudio.com.br',
+      'x-default': 'https://www.polaristudio.com.br',
+    },
   },
   openGraph: {
-    title: 'Inicio | Polaris Studio',
+    title: 'Inicio | Polaris Studio - Agencia de Desarrollo Web',
     description: 'Bienvenido a Polaris Studio, tu agencia de desarrollo web. Creamos experiencias digitales únicas y efectivas para tu negocio.',
-    url: 'https://polaris-studio.vercel.app',
+    url: 'https://www.polaristudio.com.br',
     type: 'website',
     images: [
       {
@@ -31,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Inicio | Polaris Studio',
+    title: 'Inicio | Polaris Studio - Agencia de Desarrollo Web',
     description: 'Bienvenido a Polaris Studio, tu agencia de desarrollo web. Creamos experiencias digitales únicas y efectivas para tu negocio.',
     images: ['/images/og-image.png'],
   },
