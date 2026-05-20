@@ -108,6 +108,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.trust.experience": "Años exp.",
 
     // Services Section
+    "services.tag": "Nuestros Servicios",
     "services.title": "Nuestros Servicios",
     "services.subtitle": "Navegamos juntos hacia el éxito digital",
     "services.web_dev.title": "Desarrollo Web",
@@ -125,8 +126,11 @@ const translations: Record<Language, Record<string, string>> = {
     "services.maintenance.desc": "Soporte técnico continuo para mantener tu presencia digital siempre actualizada.",
 
     // Portfolio Section
+    "portfolio.tag": "Portafolio",
     "portfolio.title": "Nuestro Portafolio",
-    "portfolio.subtitle": "Proyectos que marcan el rumbo",
+    "portfolio.subtitle": "Proyectos que inspiran y conectan",
+    "portfolio.view_site": "Ver Sitio",
+    "portfolio.more_works": "¿Querés ver más trabajos? Hablamos",
     "portfolio.project1.title": "M Vitabar | 3D Artist",
     "portfolio.project1.desc": "Portfolio profesional de artista 3D especializado en visualización de productos y CGI fotorealista",
     "portfolio.project2.title": "TOP SECRET TATTOO",
@@ -137,6 +141,7 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.project4.desc": "Sitio artístico abstracto con experiencia inmersiva, tienda de merch y contenido musical exclusivo",
 
     // Process Section
+    "process.tag": "Metodología",
     "process.title": "Nuestro Proceso",
     "process.subtitle": "Un viaje estructurado hacia el éxito",
     "process.discovery.title": "Descubrimiento",
@@ -149,6 +154,7 @@ const translations: Record<Language, Record<string, string>> = {
     "process.launch.desc": "Desplegamos tu proyecto y te acompañamos en cada paso del camino.",
 
     // Testimonials Section
+    "testimonials.tag": "Testimonios",
     "testimonials.title": "Lo que dicen nuestros clientes",
     "testimonials.subtitle": "Historias de éxito que nos inspiran",
     "testimonials.client1.name": "María González",
@@ -212,6 +218,8 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.legal.terms": "Términos",
     "footer.legal.cookies": "Cookies",
     "footer.rights": "Todos los derechos reservados.",
+    "footer.location": "Siderópolis, SC, Brasil",
+    "footer.back_to_top": "Volver arriba",
 
     // Stats Band
     "stats.projects": "Proyectos entregados",
@@ -253,6 +261,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.trust.experience": "Years exp.",
 
     // Services Section
+    "services.tag": "Our Services",
     "services.title": "Our Services",
     "services.subtitle": "Navigating together towards digital success",
     "services.web_dev.title": "Web Development",
@@ -269,8 +278,11 @@ const translations: Record<Language, Record<string, string>> = {
     "services.maintenance.desc": "Continuous technical support to keep your digital presence always updated.",
 
     // Portfolio Section
+    "portfolio.tag": "Portfolio",
     "portfolio.title": "Our Portfolio",
     "portfolio.subtitle": "Projects that set the course",
+    "portfolio.view_site": "View Site",
+    "portfolio.more_works": "Want to see more work? Let's talk",
     "portfolio.project1.title": "M Vitabar | 3D Artist",
     "portfolio.project1.desc": "Professional 3D artist portfolio specializing in product visualization and photorealistic CGI",
     "portfolio.project2.title": "TOP SECRET TATTOO",
@@ -281,6 +293,7 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.project4.desc": "Abstract artistic site with immersive experience, merch store, and exclusive music content",
 
     // Process Section
+    "process.tag": "Methodology",
     "process.title": "Our Process",
     "process.subtitle": "A structured journey to success",
     "process.discovery.title": "Discovery",
@@ -293,6 +306,7 @@ const translations: Record<Language, Record<string, string>> = {
     "process.launch.desc": "We deploy your project and accompany you every step of the way.",
 
     // Testimonials Section
+    "testimonials.tag": "Testimonials",
     "testimonials.title": "What our clients say",
     "testimonials.subtitle": "Success stories that inspire us",
     "testimonials.client1.name": "Maria González",
@@ -356,6 +370,8 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.legal.terms": "Terms",
     "footer.legal.cookies": "Cookies",
     "footer.rights": "All rights reserved.",
+    "footer.location": "Siderópolis, SC, Brasil",
+    "footer.back_to_top": "Back to top",
 
     // Stats Band
     "stats.projects": "Projects delivered",
@@ -397,6 +413,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.trust.experience": "Anos exp.",
 
     // Services Section
+    "services.tag": "Nossos Serviços",
     "services.title": "Nossos Serviços",
     "services.subtitle": "Navegamos juntos rumo ao sucesso digital",
     "services.web_dev.title": "Desenvolvimento Web",
@@ -414,18 +431,22 @@ const translations: Record<Language, Record<string, string>> = {
     "services.maintenance.desc": "Suporte técnico contínuo para manter sua presença digital sempre atualizada.",
 
     // Portfolio Section
+    "portfolio.tag": "Portfólio",
     "portfolio.title": "Nosso Portfólio",
-    "portfolio.subtitle": "Projetos que marcam o rumo",
+    "portfolio.subtitle": "Projetos que inspiram e conectam",
+    "portfolio.view_site": "Ver Site",
+    "portfolio.more_works": "Quer ver mais trabalhos? Vamos conversar",
     "portfolio.project1.title": "M Vitabar | 3D Artist",
     "portfolio.project1.desc": "Portfólio profissional de artista 3D especializado em visualização de produtos e CGI fotorealista",
     "portfolio.project2.title": "TOP SECRET TATTOO",
-    "portfolio.project2.desc": "Estúdio de tatuagem com galeria de trabalhos, serviços de tatuagem realista e sistema de agendamento",
+    "portfolio.project2.desc": "Estúdio de tatuagens com galeria de trabalhos, serviços de tatuagem realista e sistema de agendamento",
     "portfolio.project3.title": "Delicias da Rafa",
     "portfolio.project3.desc": "E-commerce de cestas de café da manhã e lanches com sistema de pedidos e catálogo de produtos",
     "portfolio.project4.title": "Era de Prata",
     "portfolio.project4.desc": "Site artístico abstrato com experiência imersiva, loja de merch e conteúdo musical exclusivo",
 
     // Process Section
+    "process.tag": "Metodologia",
     "process.title": "Nosso Processo",
     "process.subtitle": "Uma jornada estruturada rumo ao sucesso",
     "process.discovery.title": "Descoberta",
@@ -438,6 +459,7 @@ const translations: Record<Language, Record<string, string>> = {
     "process.launch.desc": "Implantamos seu projeto e o acompanhamos em cada passo do caminho.",
 
     // Testimonials Section
+    "testimonials.tag": "Depoimentos",
     "testimonials.title": "O que dizem nossos clientes",
     "testimonials.subtitle": "Histórias de sucesso que nos inspiram",
     "testimonials.client1.name": "Maria González",
@@ -501,6 +523,8 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.legal.terms": "Termos",
     "footer.legal.cookies": "Cookies",
     "footer.rights": "Todos os direitos reservados.",
+    "footer.location": "Siderópolis, SC, Brasil",
+    "footer.back_to_top": "Voltar ao topo",
 
     // Stats Band
     "stats.projects": "Projetos entregues",

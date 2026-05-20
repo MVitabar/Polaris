@@ -71,7 +71,7 @@ export function PortfolioSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20 animate-fade-in-up">
-          <span className="section-tag mb-4">Portafolio</span>
+          <span className="section-tag mb-4">{t("portfolio.tag")}</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground font-sans mb-6 tracking-tight">
             {t("portfolio.title")}
           </h2>
@@ -140,7 +140,7 @@ export function PortfolioSection() {
 
                 <div className="flex items-center justify-end pt-4 border-t border-border/30">
                   <span className="text-xs font-sans font-semibold text-primary group-hover:underline flex items-center gap-1">
-                    Ver Sitio <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                    {t("portfolio.view_site")} <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
                   </span>
                 </div>
               </div>
@@ -155,7 +155,7 @@ export function PortfolioSection() {
             className="group font-sans font-semibold px-8 border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             onClick={() => scrollToSection("contact")}
           >
-            ¿Querés ver más trabajos? Hablamos
+            {t("portfolio.more_works")}
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
