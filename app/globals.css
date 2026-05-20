@@ -144,6 +144,7 @@
     background-image:
       radial-gradient(ellipse at 20% 10%, rgba(232, 199, 127, 0.03) 0%, transparent 50%),
       radial-gradient(ellipse at 80% 90%, rgba(232, 199, 127, 0.04) 0%, transparent 50%);
+    overflow-x: hidden;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-sans;

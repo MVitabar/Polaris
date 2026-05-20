@@ -46,32 +46,14 @@ export function CTASection() {
     criteriaMode: 'all'
   })
 
-  const valueBullets = {
-    es: [
-      { title: "Respuesta en < 24hs", desc: "Atención ágil y directa sin intermediarios.", icon: Clock },
-      { title: "Sin contratos largos", desc: "Trabajamos por objetivos claros con entregas pautadas.", icon: CheckCircle2 },
-      { title: "Soporte post-lanzamiento", desc: "Acompañamiento técnico garantizado tras el despliegue.", icon: Sparkles }
-    ],
-    en: [
-      { title: "Response under 24 hours", desc: "Agile, direct communication with no middlemen.", icon: Clock },
-      { title: "No long-term locks", desc: "We work towards clear milestones with fixed deadlines.", icon: CheckCircle2 },
-      { title: "Post-launch support", desc: "Guaranteed technical assistance after the release.", icon: Sparkles }
-    ],
-    pt: [
-      { title: "Resposta em < 24h", desc: "Atendimento ágil e direto sem intermediários.", icon: Clock },
-      { title: "Sem contratos longos", desc: "Trabalhamos por metas claras com prazos definidos.", icon: CheckCircle2 },
-      { title: "Suporte pós-lançamento", desc: "Suporte técnico garantido após a publicação.", icon: Sparkles }
-    ]
-  }
+  const valueBullets = [
+    { titleKey: "cta.bullet1.title", descKey: "cta.bullet1.desc", icon: Clock },
+    { titleKey: "cta.bullet2.title", descKey: "cta.bullet2.desc", icon: CheckCircle2 },
+    { titleKey: "cta.bullet3.title", descKey: "cta.bullet3.desc", icon: Sparkles }
+  ]
 
-  const availabilityText = {
-    es: "Disponibilidad: 2 cupos para proyectos este mes",
-    en: "Availability: 2 slots open for projects this month",
-    pt: "Disponibilidade: 2 vagas para projetos este mês"
-  }
-
-  const bullets = valueBullets[language] || valueBullets.es
-  const availability = availabilityText[language] || availabilityText.es
+  const bullets = valueBullets
+  const availability = t("cta.availability")
 
   const onSubmit = async (data: FormData) => {
     const trimmedData = {
@@ -201,10 +183,10 @@ export function CTASection() {
                       </div>
                       <div>
                         <h4 className="font-sans font-bold text-foreground text-base">
-                          {bullet.title}
+                          {t(bullet.titleKey)}
                         </h4>
                         <p className="text-muted-foreground text-sm font-serif mt-1 leading-relaxed">
-                          {bullet.desc}
+                          {t(bullet.descKey)}
                         </p>
                       </div>
                     </div>

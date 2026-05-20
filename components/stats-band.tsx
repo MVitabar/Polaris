@@ -10,22 +10,22 @@ export function StatsBand() {
     {
       icon: TrendingUp,
       value: "+40",
-      label: "Proyectos entregados",
+      labelKey: "stats.projects",
     },
     {
       icon: Users,
       value: "100%",
-      label: "Clientes satisfechos",
+      labelKey: "stats.clients",
     },
     {
       icon: Award,
       value: "5★",
-      label: "Rating promedio",
+      labelKey: "stats.rating",
     },
     {
       icon: Clock,
       value: "< 24h",
-      label: "Tiempo de respuesta",
+      labelKey: "stats.response",
     },
   ]
 
@@ -63,7 +63,7 @@ export function StatsBand() {
                   </span>
                 </div>
                 <p className="text-xs md:text-sm text-muted-foreground font-sans">
-                  {stat.label}
+                  {t(stat.labelKey)}
                 </p>
               </div>
             )

@@ -97,11 +97,15 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero Section
     "hero.tagline": "Guiamos tu rumbo digital",
+    "hero.badge": "Agencia de Desarrollo Web",
     "hero.title": "Transformamos ideas en experiencias digitales extraordinarias",
     "hero.subtitle":
       "Somos Polaris Studio, tu brújula en el vasto océano digital. Creamos sitios web y aplicaciones que no solo funcionan, sino que inspiran y conectan con tu audiencia.",
     "hero.cta": "Iniciar mi proyecto",
     "hero.learn_more": "Conocer más",
+    "hero.trust.projects": "Proyectos",
+    "hero.trust.rating": "Rating",
+    "hero.trust.experience": "Años exp.",
 
     // Services Section
     "services.title": "Nuestros Servicios",
@@ -208,6 +212,21 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.legal.terms": "Términos",
     "footer.legal.cookies": "Cookies",
     "footer.rights": "Todos los derechos reservados.",
+
+    // Stats Band
+    "stats.projects": "Proyectos entregados",
+    "stats.clients": "Clientes satisfechos",
+    "stats.rating": "Rating promedio",
+    "stats.response": "Tiempo de respuesta",
+
+    // CTA Section
+    "cta.availability": "Disponibilidad: 2 cupos para proyectos este mes",
+    "cta.bullet1.title": "Respuesta en < 24hs",
+    "cta.bullet1.desc": "Atención ágil y directa sin intermediarios.",
+    "cta.bullet2.title": "Sin contratos largos",
+    "cta.bullet2.desc": "Trabajamos por objetivos claros con entregas pautadas.",
+    "cta.bullet3.title": "Soporte post-lanzamiento",
+    "cta.bullet3.desc": "Acompañamiento técnico garantizado tras el despliegue.",
   },
 
   en: {
@@ -223,11 +242,15 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero Section
     "hero.tagline": "We guide your digital course",
+    "hero.badge": "Web Development Agency",
     "hero.title": "We transform ideas into extraordinary digital experiences",
     "hero.subtitle":
       "We are Polaris Studio, your compass in the vast digital ocean. We create websites and applications that don't just work, but inspire and connect with your audience.",
     "hero.cta": "Start my project",
     "hero.learn_more": "Learn more",
+    "hero.trust.projects": "Projects",
+    "hero.trust.rating": "Rating",
+    "hero.trust.experience": "Years exp.",
 
     // Services Section
     "services.title": "Our Services",
@@ -333,6 +356,21 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.legal.terms": "Terms",
     "footer.legal.cookies": "Cookies",
     "footer.rights": "All rights reserved.",
+
+    // Stats Band
+    "stats.projects": "Projects delivered",
+    "stats.clients": "Satisfied clients",
+    "stats.rating": "Average rating",
+    "stats.response": "Response time",
+
+    // CTA Section
+    "cta.availability": "Availability: 2 slots open for projects this month",
+    "cta.bullet1.title": "Response under 24 hours",
+    "cta.bullet1.desc": "Agile, direct communication with no middlemen.",
+    "cta.bullet2.title": "No long-term locks",
+    "cta.bullet2.desc": "We work towards clear milestones with fixed deadlines.",
+    "cta.bullet3.title": "Post-launch support",
+    "cta.bullet3.desc": "Guaranteed technical assistance after the release.",
   },
 
   pt: {
@@ -348,11 +386,15 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero Section
     "hero.tagline": "Guiamos seu rumo digital",
+    "hero.badge": "Agência de Desenvolvimento Web",
     "hero.title": "Transformamos ideias em experiências digitais extraordinárias",
     "hero.subtitle":
       "Somos o Polaris Studio, sua bússola no vasto oceano digital. Criamos sites e aplicações que não apenas funcionam, mas inspiram e conectam com sua audiência.",
     "hero.cta": "Iniciar meu projeto",
     "hero.learn_more": "Saiba mais",
+    "hero.trust.projects": "Projetos",
+    "hero.trust.rating": "Avaliação",
+    "hero.trust.experience": "Anos exp.",
 
     // Services Section
     "services.title": "Nossos Serviços",
@@ -459,5 +501,20 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.legal.terms": "Termos",
     "footer.legal.cookies": "Cookies",
     "footer.rights": "Todos os direitos reservados.",
+
+    // Stats Band
+    "stats.projects": "Projetos entregues",
+    "stats.clients": "Clientes satisfeitos",
+    "stats.rating": "Avaliação média",
+    "stats.response": "Tempo de resposta",
+
+    // CTA Section
+    "cta.availability": "Disponibilidade: 2 vagas para projetos este mês",
+    "cta.bullet1.title": "Resposta em < 24h",
+    "cta.bullet1.desc": "Atendimento ágil e direto sem intermediários.",
+    "cta.bullet2.title": "Sem contratos longos",
+    "cta.bullet2.desc": "Trabalhamos por metas claras com prazos definidos.",
+    "cta.bullet3.title": "Suporte pós-lançamento",
+    "cta.bullet3.desc": "Suporte técnico garantido após a publicação.",
   },
 }
