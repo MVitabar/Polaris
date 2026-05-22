@@ -72,12 +72,12 @@ export function NavigationHeader() {
           boxShadow: isScrolled ? "0 4px 40px rgba(0,0,0,0.4), 0 1px 0 rgba(232,199,127,0.1)" : "none",
         }}
       >
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 md:h-18">
+        <div className="container mx-auto px-3 sm:px-4">
+          <div className="flex items-center justify-between h-14 sm:h-16 md:h-18">
             {/* Logo */}
             <button
               onClick={() => scrollToSection("hero")}
-              className="flex items-center space-x-3 group"
+              className="flex items-center space-x-2 sm:space-x-3 group"
             >
               <div className="relative">
                 <div className="absolute inset-0 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -87,11 +87,11 @@ export function NavigationHeader() {
                   alt="Polaris Studio"
                   width={36}
                   height={36}
-                  className="w-9 h-9 relative z-10 transition-transform duration-300 group-hover:scale-110"
+                  className="w-7 h-7 sm:w-9 sm:h-9 relative z-10 transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
-              <div>
-                <span className="text-lg font-sans font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+              <div className="hidden sm:block">
+                <span className="text-base sm:text-lg font-sans font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                   Polaris Studio
                 </span>
               </div>
@@ -120,11 +120,11 @@ export function NavigationHeader() {
             </nav>
 
             {/* Right side */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3">
               <LanguageSelector />
               <Button
                 size="sm"
-                className="hidden sm:inline-flex font-sans font-semibold px-5 transition-all duration-300 hover:scale-105"
+                className="hidden sm:inline-flex font-sans font-semibold px-4 sm:px-5 transition-all duration-300 hover:scale-105"
                 style={{
                   background: "linear-gradient(135deg, var(--gold-dim), var(--gold))",
                   color: "var(--navy-mid)",

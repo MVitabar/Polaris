@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { createContext, useContext, useState, useEffect } from "react"
+import { useRouter, usePathname } from "next/navigation"
 
 export type Language = "es" | "en" | "pt"
 
@@ -21,21 +22,54 @@ export function useLanguage() {
   return context
 }
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>("es")
+export function LanguageProvider({ 
+  children, 
+  initialLanguage 
+}: { 
+  children: React.ReactNode
+  initialLanguage?: Language 
+}) {
+  const [language, setLanguage] = useState<Language>(initialLanguage || "es")
+  const router = useRouter()
+  const pathname = usePathname()
 
-  // Load saved language preference
+  // Detect language from URL on mount (only if no initialLanguage provided)
   useEffect(() => {
-    const saved = localStorage.getItem("polaris-language") as Language
-    if (saved && ["es", "en", "pt"].includes(saved)) {
-      setLanguage(saved)
+    if (initialLanguage) return // Skip if initialLanguage is provided
+    
+    const pathLocale = pathname.split('/')[1] as Language
+    const validLocales = ['es', 'en', 'pt']
+    
+    if (validLocales.includes(pathLocale)) {
+      setLanguage(pathLocale)
+      localStorage.setItem("polaris-language", pathLocale)
+    } else {
+      // Load saved language preference if no locale in URL
+      const saved = localStorage.getItem("polaris-language") as Language
+      if (saved && validLocales.includes(saved)) {
+        setLanguage(saved)
+      }
     }
-  }, [])
+  }, [pathname, initialLanguage])
 
-  // Save language preference
+  // Save language preference and update URL when language changes
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang)
     localStorage.setItem("polaris-language", lang)
+    
+    // Update URL to reflect new language
+    const currentPath = pathname
+    const pathLocale = currentPath.split('/')[1]
+    const validLocales = ['es', 'en', 'pt']
+    
+    if (validLocales.includes(pathLocale)) {
+      // Replace current locale with new locale
+      const newPath = currentPath.replace(`/${pathLocale}`, `/${lang}`)
+      router.push(newPath)
+    } else {
+      // If no locale in URL, redirect to new locale
+      router.push(`/${lang}`)
+    }
   }
 
   const t = (key: string): string => {
@@ -63,13 +97,18 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero Section
     "hero.tagline": "Guiamos tu rumbo digital",
+    "hero.badge": "Agencia de Desarrollo Web",
     "hero.title": "Transformamos ideas en experiencias digitales extraordinarias",
     "hero.subtitle":
       "Somos Polaris Studio, tu brújula en el vasto océano digital. Creamos sitios web y aplicaciones que no solo funcionan, sino que inspiran y conectan con tu audiencia.",
     "hero.cta": "Iniciar mi proyecto",
     "hero.learn_more": "Conocer más",
+    "hero.trust.projects": "Proyectos",
+    "hero.trust.rating": "Rating",
+    "hero.trust.experience": "Años exp.",
 
     // Services Section
+    "services.tag": "Nuestros Servicios",
     "services.title": "Nuestros Servicios",
     "services.subtitle": "Navegamos juntos hacia el éxito digital",
     "services.web_dev.title": "Desarrollo Web",
@@ -87,8 +126,11 @@ const translations: Record<Language, Record<string, string>> = {
     "services.maintenance.desc": "Soporte técnico continuo para mantener tu presencia digital siempre actualizada.",
 
     // Portfolio Section
+    "portfolio.tag": "Portafolio",
     "portfolio.title": "Nuestro Portafolio",
-    "portfolio.subtitle": "Proyectos que marcan el rumbo",
+    "portfolio.subtitle": "Proyectos que inspiran y conectan",
+    "portfolio.view_site": "Ver Sitio",
+    "portfolio.more_works": "¿Querés ver más trabajos? Hablamos",
     "portfolio.project1.title": "M Vitabar | 3D Artist",
     "portfolio.project1.desc": "Portfolio profesional de artista 3D especializado en visualización de productos y CGI fotorealista",
     "portfolio.project2.title": "TOP SECRET TATTOO",
@@ -99,6 +141,7 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.project4.desc": "Sitio artístico abstracto con experiencia inmersiva, tienda de merch y contenido musical exclusivo",
 
     // Process Section
+    "process.tag": "Metodología",
     "process.title": "Nuestro Proceso",
     "process.subtitle": "Un viaje estructurado hacia el éxito",
     "process.discovery.title": "Descubrimiento",
@@ -111,6 +154,7 @@ const translations: Record<Language, Record<string, string>> = {
     "process.launch.desc": "Desplegamos tu proyecto y te acompañamos en cada paso del camino.",
 
     // Testimonials Section
+    "testimonials.tag": "Testimonios",
     "testimonials.title": "Lo que dicen nuestros clientes",
     "testimonials.subtitle": "Historias de éxito que nos inspiran",
     "testimonials.client1.name": "María González",
@@ -174,6 +218,23 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.legal.terms": "Términos",
     "footer.legal.cookies": "Cookies",
     "footer.rights": "Todos los derechos reservados.",
+    "footer.location": "Siderópolis, SC, Brasil",
+    "footer.back_to_top": "Volver arriba",
+
+    // Stats Band
+    "stats.projects": "Proyectos entregados",
+    "stats.clients": "Clientes satisfechos",
+    "stats.rating": "Rating promedio",
+    "stats.response": "Tiempo de respuesta",
+
+    // CTA Section
+    "cta.availability": "Disponibilidad: 2 cupos para proyectos este mes",
+    "cta.bullet1.title": "Respuesta en < 24hs",
+    "cta.bullet1.desc": "Atención ágil y directa sin intermediarios.",
+    "cta.bullet2.title": "Sin contratos largos",
+    "cta.bullet2.desc": "Trabajamos por objetivos claros con entregas pautadas.",
+    "cta.bullet3.title": "Soporte post-lanzamiento",
+    "cta.bullet3.desc": "Acompañamiento técnico garantizado tras el despliegue.",
   },
 
   en: {
@@ -189,13 +250,18 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero Section
     "hero.tagline": "We guide your digital course",
+    "hero.badge": "Web Development Agency",
     "hero.title": "We transform ideas into extraordinary digital experiences",
     "hero.subtitle":
       "We are Polaris Studio, your compass in the vast digital ocean. We create websites and applications that don't just work, but inspire and connect with your audience.",
     "hero.cta": "Start my project",
     "hero.learn_more": "Learn more",
+    "hero.trust.projects": "Projects",
+    "hero.trust.rating": "Rating",
+    "hero.trust.experience": "Years exp.",
 
     // Services Section
+    "services.tag": "Our Services",
     "services.title": "Our Services",
     "services.subtitle": "Navigating together towards digital success",
     "services.web_dev.title": "Web Development",
@@ -212,8 +278,11 @@ const translations: Record<Language, Record<string, string>> = {
     "services.maintenance.desc": "Continuous technical support to keep your digital presence always updated.",
 
     // Portfolio Section
+    "portfolio.tag": "Portfolio",
     "portfolio.title": "Our Portfolio",
     "portfolio.subtitle": "Projects that set the course",
+    "portfolio.view_site": "View Site",
+    "portfolio.more_works": "Want to see more work? Let's talk",
     "portfolio.project1.title": "M Vitabar | 3D Artist",
     "portfolio.project1.desc": "Professional 3D artist portfolio specializing in product visualization and photorealistic CGI",
     "portfolio.project2.title": "TOP SECRET TATTOO",
@@ -224,6 +293,7 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.project4.desc": "Abstract artistic site with immersive experience, merch store, and exclusive music content",
 
     // Process Section
+    "process.tag": "Methodology",
     "process.title": "Our Process",
     "process.subtitle": "A structured journey to success",
     "process.discovery.title": "Discovery",
@@ -236,6 +306,7 @@ const translations: Record<Language, Record<string, string>> = {
     "process.launch.desc": "We deploy your project and accompany you every step of the way.",
 
     // Testimonials Section
+    "testimonials.tag": "Testimonials",
     "testimonials.title": "What our clients say",
     "testimonials.subtitle": "Success stories that inspire us",
     "testimonials.client1.name": "Maria González",
@@ -299,6 +370,23 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.legal.terms": "Terms",
     "footer.legal.cookies": "Cookies",
     "footer.rights": "All rights reserved.",
+    "footer.location": "Siderópolis, SC, Brasil",
+    "footer.back_to_top": "Back to top",
+
+    // Stats Band
+    "stats.projects": "Projects delivered",
+    "stats.clients": "Satisfied clients",
+    "stats.rating": "Average rating",
+    "stats.response": "Response time",
+
+    // CTA Section
+    "cta.availability": "Availability: 2 slots open for projects this month",
+    "cta.bullet1.title": "Response under 24 hours",
+    "cta.bullet1.desc": "Agile, direct communication with no middlemen.",
+    "cta.bullet2.title": "No long-term locks",
+    "cta.bullet2.desc": "We work towards clear milestones with fixed deadlines.",
+    "cta.bullet3.title": "Post-launch support",
+    "cta.bullet3.desc": "Guaranteed technical assistance after the release.",
   },
 
   pt: {
@@ -314,13 +402,18 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Hero Section
     "hero.tagline": "Guiamos seu rumo digital",
+    "hero.badge": "Agência de Desenvolvimento Web",
     "hero.title": "Transformamos ideias em experiências digitais extraordinárias",
     "hero.subtitle":
       "Somos o Polaris Studio, sua bússola no vasto oceano digital. Criamos sites e aplicações que não apenas funcionam, mas inspiram e conectam com sua audiência.",
     "hero.cta": "Iniciar meu projeto",
     "hero.learn_more": "Saiba mais",
+    "hero.trust.projects": "Projetos",
+    "hero.trust.rating": "Avaliação",
+    "hero.trust.experience": "Anos exp.",
 
     // Services Section
+    "services.tag": "Nossos Serviços",
     "services.title": "Nossos Serviços",
     "services.subtitle": "Navegamos juntos rumo ao sucesso digital",
     "services.web_dev.title": "Desenvolvimento Web",
@@ -338,18 +431,22 @@ const translations: Record<Language, Record<string, string>> = {
     "services.maintenance.desc": "Suporte técnico contínuo para manter sua presença digital sempre atualizada.",
 
     // Portfolio Section
+    "portfolio.tag": "Portfólio",
     "portfolio.title": "Nosso Portfólio",
-    "portfolio.subtitle": "Projetos que marcam o rumo",
+    "portfolio.subtitle": "Projetos que inspiram e conectam",
+    "portfolio.view_site": "Ver Site",
+    "portfolio.more_works": "Quer ver mais trabalhos? Vamos conversar",
     "portfolio.project1.title": "M Vitabar | 3D Artist",
     "portfolio.project1.desc": "Portfólio profissional de artista 3D especializado em visualização de produtos e CGI fotorealista",
     "portfolio.project2.title": "TOP SECRET TATTOO",
-    "portfolio.project2.desc": "Estúdio de tatuagem com galeria de trabalhos, serviços de tatuagem realista e sistema de agendamento",
+    "portfolio.project2.desc": "Estúdio de tatuagens com galeria de trabalhos, serviços de tatuagem realista e sistema de agendamento",
     "portfolio.project3.title": "Delicias da Rafa",
     "portfolio.project3.desc": "E-commerce de cestas de café da manhã e lanches com sistema de pedidos e catálogo de produtos",
     "portfolio.project4.title": "Era de Prata",
     "portfolio.project4.desc": "Site artístico abstrato com experiência imersiva, loja de merch e conteúdo musical exclusivo",
 
     // Process Section
+    "process.tag": "Metodologia",
     "process.title": "Nosso Processo",
     "process.subtitle": "Uma jornada estruturada rumo ao sucesso",
     "process.discovery.title": "Descoberta",
@@ -362,6 +459,7 @@ const translations: Record<Language, Record<string, string>> = {
     "process.launch.desc": "Implantamos seu projeto e o acompanhamos em cada passo do caminho.",
 
     // Testimonials Section
+    "testimonials.tag": "Depoimentos",
     "testimonials.title": "O que dizem nossos clientes",
     "testimonials.subtitle": "Histórias de sucesso que nos inspiram",
     "testimonials.client1.name": "Maria González",
@@ -425,5 +523,22 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.legal.terms": "Termos",
     "footer.legal.cookies": "Cookies",
     "footer.rights": "Todos os direitos reservados.",
+    "footer.location": "Siderópolis, SC, Brasil",
+    "footer.back_to_top": "Voltar ao topo",
+
+    // Stats Band
+    "stats.projects": "Projetos entregues",
+    "stats.clients": "Clientes satisfeitos",
+    "stats.rating": "Avaliação média",
+    "stats.response": "Tempo de resposta",
+
+    // CTA Section
+    "cta.availability": "Disponibilidade: 2 vagas para projetos este mês",
+    "cta.bullet1.title": "Resposta em < 24h",
+    "cta.bullet1.desc": "Atendimento ágil e direto sem intermediários.",
+    "cta.bullet2.title": "Sem contratos longos",
+    "cta.bullet2.desc": "Trabalhamos por metas claras com prazos definidos.",
+    "cta.bullet3.title": "Suporte pós-lançamento",
+    "cta.bullet3.desc": "Suporte técnico garantido após a publicação.",
   },
 }

@@ -123,7 +123,7 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-3 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>Siderópolis, SC, Brasil</span>
+                <span>{t("footer.location")}</span>
               </div>
             </div>
 
@@ -159,7 +159,7 @@ export function Footer() {
             onClick={scrollToTop}
             className="text-xs font-sans text-muted-foreground hover:text-primary flex items-center gap-1.5"
           >
-            <span>Volver arriba</span>
+            <span>{t("footer.back_to_top")}</span>
             <ArrowUp className="w-3.5 h-3.5" />
           </Button>
         </div>

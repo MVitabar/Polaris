@@ -21,9 +21,9 @@ export function HeroSection() {
   }
 
   const trustMetrics = [
-    { value: "+40", label: "Proyectos" },
-    { value: "5★", label: "Rating" },
-    { value: "2+", label: "Años exp." },
+    { value: "+40", labelKey: "hero.trust.projects" },
+    { value: "5★", labelKey: "hero.trust.rating" },
+    { value: "2+", labelKey: "hero.trust.experience" },
   ]
 
   return (
@@ -56,8 +56,8 @@ export function HeroSection() {
       <div className="absolute bottom-32 left-8 w-12 h-12 border border-primary/10 rotate-12 rounded-sm pointer-events-none animate-float-gentle" style={{ animationDelay: "2s" }} />
       <div className="absolute top-1/3 left-6 w-2 h-16 bg-gradient-to-b from-primary/20 to-transparent rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="container mx-auto px-3 sm:px-4 py-12 sm:py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
           {/* ── Left Column — Content ── */}
           <div className="space-y-8">
@@ -67,7 +67,7 @@ export function HeroSection() {
               <div>
                 <span className="section-tag">
                   <span style={{ color: "var(--gold)" }}>✦</span>
-                  Agencia de Desarrollo Web
+                  {t("hero.badge")}
                 </span>
               </div>
             </ScrollReveal>
@@ -102,12 +102,12 @@ export function HeroSection() {
             {/* Title */}
             <ScrollReveal direction="left" delay={300} distance={100} duration={1200}>
               <div className="space-y-3">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-bold leading-[1.08] tracking-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold leading-[1.08] tracking-tight">
                   <span className="text-foreground">{t("hero.title").split(" ").slice(0, -2).join(" ")}</span>
                   {" "}
                   <span className="gradient-text">{t("hero.title").split(" ").slice(-2).join(" ")}</span>
                 </h1>
-                <p className="text-lg text-muted-foreground font-serif leading-relaxed max-w-xl">
+                <p className="text-sm sm:text-base md:text-lg text-muted-foreground font-serif leading-relaxed max-w-xl">
                   {t("hero.subtitle")}
                 </p>
               </div>
@@ -115,14 +115,14 @@ export function HeroSection() {
 
             {/* Trust metrics */}
             <ScrollReveal direction="up" delay={450} distance={60} duration={1000}>
-              <div className="flex items-center gap-6 py-2">
+              <div className="flex items-center justify-center gap-4 sm:gap-6 py-2">
                 {trustMetrics.map((m, i) => (
-                  <div key={i} className="flex items-center gap-4">
+                  <div key={i} className="flex items-center gap-2 sm:gap-4">
                     <div className="text-center">
-                      <p className="text-2xl font-sans font-bold" style={{ color: "var(--gold)" }}>{m.value}</p>
-                      <p className="text-xs text-muted-foreground font-sans uppercase tracking-wide">{m.label}</p>
+                      <p className="text-xl sm:text-2xl font-sans font-bold" style={{ color: "var(--gold)" }}>{m.value}</p>
+                      <p className="text-[10px] sm:text-xs text-muted-foreground font-sans uppercase tracking-wide">{t(m.labelKey)}</p>
                     </div>
-                    {i < trustMetrics.length - 1 && <div className="stat-divider" />}
+                    {i < trustMetrics.length - 1 && <div className="stat-divider hidden sm:block" />}
                   </div>
                 ))}
               </div>
@@ -130,10 +130,10 @@ export function HeroSection() {
 
             {/* CTAs */}
             <ScrollReveal direction="up" delay={600} distance={60} duration={1000}>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button
                   size="lg"
-                  className="font-sans font-semibold px-8 text-base transition-all duration-300 hover:scale-105 hover:-translate-y-1 group"
+                  className="font-sans font-semibold px-6 sm:px-8 text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:-translate-y-1 group"
                   style={{
                     background: "linear-gradient(135deg, var(--gold-dim), var(--gold))",
                     color: "var(--navy-mid)",
@@ -147,7 +147,7 @@ export function HeroSection() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="font-sans font-semibold px-8 text-base bg-transparent transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                  className="font-sans font-semibold px-6 sm:px-8 text-sm sm:text-base bg-transparent transition-all duration-300 hover:scale-105 hover:-translate-y-1"
                   style={{
                     borderColor: "var(--gold-border)",
                     color: "var(--gold)",
@@ -168,7 +168,7 @@ export function HeroSection() {
 
           {/* ── Right Column — Browser Mock ── */}
           <ScrollReveal direction="right" delay={400} distance={100} duration={1300}>
-            <div className="relative">
+            <div className="relative hidden lg:block">
               {/* Browser frame */}
               <div
                 className="relative rounded-2xl overflow-hidden shadow-2xl"

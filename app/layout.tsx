@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Suspense } from "react"
 import "./globals.css"
-import { LanguageProvider } from "@/contexts/language-context"
+import { HtmlLangProvider } from "@/components/html-lang-provider"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -22,13 +22,13 @@ const lora = Lora({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://polaris-studio.vercel.app'),
+  metadataBase: new URL('https://www.polaristudio.com.br'),
   title: {
-    default: 'Polaris Studio - Guiamos tu rumbo digital',
+    default: 'Polaris Studio - Agencia de Desarrollo Web y Diseño Digital',
     template: '%s | Polaris Studio',
   },
-  description: 'Agencia de desarrollo web especializada en landing pages, aplicaciones web, e-commerce y consultoría digital. Transformamos ideas en experiencias digitales únicas.',
-  keywords: ['desarrollo web', 'diseño web', 'aplicaciones web', 'e-commerce', 'landing pages', 'consultoría digital', 'agencia digital', 'páginas web'],
+  description: 'Agencia de desarrollo web especializada en crear experiencias digitales extraordinarias. Ofrecemos diseño web profesional, desarrollo de aplicaciones móviles, e-commerce, landing pages y consultoría digital para transformar tu negocio.',
+  keywords: ['agencia de desarrollo web', 'diseño web profesional', 'desarrollo web Next.js', 'aplicaciones móviles a medida', 'e-commerce Brasil', 'landing pages', 'consultoría digital', 'desarrollo de sitios web', 'tiendas online', 'SEO y marketing digital', 'branding digital', 'mantenimiento web'],
   authors: [{ name: 'Polaris Studio' }],
   creator: 'Polaris Studio',
   publisher: 'Polaris Studio',
@@ -41,16 +41,16 @@ export const metadata: Metadata = {
     telephone: true,
   },
   openGraph: {
-    title: 'Polaris Studio - Guiamos tu rumbo digital',
-    description: 'Agencia de desarrollo web especializada en landing pages, aplicaciones web, e-commerce y consultoría digital.',
-    url: 'https://polaris-studio.vercel.app',
+    title: 'Polaris Studio - Agencia de Desarrollo Web y Diseño Digital',
+    description: 'Agencia de desarrollo web especializada en crear experiencias digitales extraordinarias. Ofrecemos diseño web profesional, desarrollo de aplicaciones móviles, e-commerce y consultoría digital.',
+    url: 'https://www.polaristudio.com.br',
     siteName: 'Polaris Studio',
     images: [
       {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Polaris Studio - Guiamos tu rumbo digital',
+        alt: 'Polaris Studio - Agencia de Desarrollo Web y Diseño Digital',
       },
     ],
     locale: 'es_AR',
@@ -58,8 +58,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Polaris Studio - Guiamos tu rumbo digital',
-    description: 'Agencia de desarrollo web especializada en landing pages, aplicaciones web, e-commerce y consultoría digital.',
+    title: 'Polaris Studio - Agencia de Desarrollo Web y Diseño Digital',
+    description: 'Agencia de desarrollo web especializada en crear experiencias digitales extraordinarias. Ofrecemos diseño web profesional, desarrollo de aplicaciones móviles, e-commerce y consultoría digital.',
     images: ['/images/og-image.png'],
     creator: '@polarisstudio',
   },
@@ -74,6 +74,15 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  alternates: {
+    canonical: 'https://www.polaristudio.com.br',
+    languages: {
+      'es': 'https://www.polaristudio.com.br/es',
+      'en': 'https://www.polaristudio.com.br/en',
+      'pt': 'https://www.polaristudio.com.br/pt',
+      'x-default': 'https://www.polaristudio.com.br',
+    },
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -84,6 +93,13 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/site.webmanifest',
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 }
 
 export default function RootLayout({
@@ -101,6 +117,11 @@ export default function RootLayout({
             <SpeedInsights />
           </Suspense>
         </LanguageProvider>
+        <Suspense fallback={<div>Loading...</div>}>
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </Suspense>
       </body>
     </html>
   )

@@ -68,7 +68,7 @@ export function ServicesSection() {
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal direction="scale" delay={0} duration={1200}>
           <div className="text-center mb-20">
-            <span className="section-tag mb-4">Nuestros Servicios</span>
+            <span className="section-tag mb-4">{t("services.tag")}</span>
             <h2 className="text-3xl md:text-5xl font-sans font-bold text-foreground mb-6 text-balance tracking-tight">
               {t("services.title")}
             </h2>
