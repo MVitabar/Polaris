@@ -7,7 +7,6 @@ import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Suspense } from "react"
 import "./globals.css"
-import { HtmlLangProvider } from "@/components/html-lang-provider"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -110,13 +109,6 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${poppins.variable} ${lora.variable} ${GeistMono.variable} antialiased`}>
-        <LanguageProvider>
-          <Suspense fallback={<div>Loading...</div>}>
-            {children}
-            <Analytics />
-            <SpeedInsights />
-          </Suspense>
-        </LanguageProvider>
         <Suspense fallback={<div>Loading...</div>}>
           {children}
           <Analytics />
