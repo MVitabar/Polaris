@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google"
 import { Lora } from "next/font/google"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Suspense } from "react"
 import "./globals.css"
 import { HtmlLangProvider } from "@/components/html-lang-provider"
@@ -112,6 +113,7 @@ export default function RootLayout({
         <Suspense fallback={<div>Loading...</div>}>
           {children}
           <Analytics />
+          <SpeedInsights />
         </Suspense>
       </body>
     </html>
