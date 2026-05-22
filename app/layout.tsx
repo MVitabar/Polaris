@@ -110,6 +110,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${poppins.variable} ${lora.variable} ${GeistMono.variable} antialiased`}>
+        <LanguageProvider>
+          <Suspense fallback={<div>Loading...</div>}>
+            {children}
+            <Analytics />
+            <SpeedInsights />
+          </Suspense>
+        </LanguageProvider>
         <Suspense fallback={<div>Loading...</div>}>
           {children}
           <Analytics />
