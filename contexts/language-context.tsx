@@ -139,6 +139,8 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.project3.desc": "E-commerce de cestas de café da mañana y lanches con sistema de pedidos y catálogo de productos",
     "portfolio.project4.title": "Era de Prata",
     "portfolio.project4.desc": "Sitio artístico abstracto con experiencia inmersiva, tienda de merch y contenido musical exclusivo",
+    "portfolio.project5.title": "Comandero",
+    "portfolio.project5.desc": "Sistema de gestión de pedidos para restaurantes con panel administrativo y seguimiento en tiempo real",
 
     // Process Section
     "process.tag": "Metodología",
@@ -291,6 +293,8 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.project3.desc": "E-commerce for breakfast baskets and snacks with ordering system and product catalog",
     "portfolio.project4.title": "Era de Prata",
     "portfolio.project4.desc": "Abstract artistic site with immersive experience, merch store, and exclusive music content",
+    "portfolio.project5.title": "Comandero",
+    "portfolio.project5.desc": "Restaurant order management system with admin panel and real-time tracking",
 
     // Process Section
     "process.tag": "Methodology",
@@ -444,6 +448,8 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.project3.desc": "E-commerce de cestas de café da manhã e lanches com sistema de pedidos e catálogo de produtos",
     "portfolio.project4.title": "Era de Prata",
     "portfolio.project4.desc": "Site artístico abstrato com experiência imersiva, loja de merch e conteúdo musical exclusivo",
+    "portfolio.project5.title": "Comandero",
+    "portfolio.project5.desc": "Sistema de gestão de pedidos para restaurantes com painel administrativo e rastreamento em tempo real",
 
     // Process Section
     "process.tag": "Metodologia",

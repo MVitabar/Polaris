@@ -1,13 +1,31 @@
 import { HeroSection } from "@/components/hero-section"
 import { StatsBand } from "@/components/stats-band"
 import { ServicesSection } from "@/components/services-section"
-import { PortfolioSection } from "@/components/portfolio-section"
-import { ProcessSection } from "@/components/process-section"
-import { TestimonialsSection } from "@/components/testimonials-section"
-import { CTASection } from "@/components/cta-section"
+import dynamic from 'next/dynamic'
 import { Footer } from "@/components/footer"
 import { NavigationHeader } from "@/components/navigation-header"
 import { Metadata } from 'next'
+
+// Lazy load heavy components
+const PortfolioSection = dynamic(() => import('@/components/portfolio-section').then(mod => ({ default: mod.PortfolioSection })), {
+  loading: () => <div className="h-96 flex items-center justify-center text-muted-foreground">Cargando...</div>,
+  ssr: true
+})
+
+const ProcessSection = dynamic(() => import('@/components/process-section').then(mod => ({ default: mod.ProcessSection })), {
+  loading: () => <div className="h-96 flex items-center justify-center text-muted-foreground">Cargando...</div>,
+  ssr: true
+})
+
+const TestimonialsSection = dynamic(() => import('@/components/testimonials-section').then(mod => ({ default: mod.TestimonialsSection })), {
+  loading: () => <div className="h-96 flex items-center justify-center text-muted-foreground">Cargando...</div>,
+  ssr: true
+})
+
+const CTASection = dynamic(() => import('@/components/cta-section').then(mod => ({ default: mod.CTASection })), {
+  loading: () => <div className="h-96 flex items-center justify-center text-muted-foreground">Cargando...</div>,
+  ssr: true
+})
 
 export const metadata: Metadata = {
   title: 'Inicio | Polaris Studio - Agencia de Desarrollo Web',

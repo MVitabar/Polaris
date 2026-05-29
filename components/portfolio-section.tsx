@@ -50,6 +50,15 @@ export function PortfolioSection() {
       tech: "HTML5 / Vanilla JS / GLSL",
       url: "https://eradeprata-site.vercel.app/",
     },
+    {
+      titleKey: "portfolio.project5.title",
+      descKey: "portfolio.project5.desc",
+      image: "/portfolio-images/comandero.png",
+      fallbackImage: "/placeholder.svg",
+      category: "SaaS",
+      tech: "Next.js / TypeScript / Prisma",
+      url: "https://comandero.vercel.app/",
+    },
   ]
 
   return (

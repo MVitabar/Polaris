@@ -204,6 +204,7 @@ export function HeroSection() {
                     alt="Proyecto desarrollado por Polaris Studio"
                     width={800}
                     height={500}
+                    priority
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent" />
