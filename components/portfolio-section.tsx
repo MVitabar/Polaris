@@ -57,7 +57,7 @@ export function PortfolioSection() {
       fallbackImage: "/placeholder.svg",
       category: "SaaS",
       tech: "Next.js / TypeScript / Prisma",
-      url: "https://comandero.vercel.app/",
+      url: "https://www.comanderoweb.shop/",
     },
   ]
 
