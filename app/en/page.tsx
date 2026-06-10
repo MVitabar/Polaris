@@ -28,8 +28,8 @@ const CTASection = dynamic(() => import('@/components/cta-section').then(mod => 
 })
 
 export const metadata: Metadata = {
-  title: 'Home | Polaris Studio - Web Development Agency',
-  description: 'Welcome to Polaris Studio, your web development agency. We create unique and effective digital experiences for your business. Specialists in web design, mobile apps, and e-commerce.',
+  title: 'Home | Polaris Studio - GEO & AEO Agency for the AI Era 2026',
+  description: 'Leading digital agency in Brazil specializing in GEO (Generative Engine Optimization) and AEO (Answer Engine Optimization). We optimize for ChatGPT, Bing Copilot and Google AI Overviews with brand authority and proven E-E-A-T. Over 500 projects delivered with generative search engine expertise.',
   alternates: {
     canonical: 'https://www.polaristudio.com.br/en',
     languages: {
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Home | Polaris Studio - Web Development Agency',
-    description: 'Welcome to Polaris Studio, your web development agency. We create unique and effective digital experiences for your business.',
+    title: 'Home | Polaris Studio - GEO & AEO Agency for the AI Era 2026',
+    description: 'Leading digital agency in Brazil specializing in GEO (Generative Engine Optimization) and AEO (Answer Engine Optimization). We optimize for ChatGPT, Bing Copilot and Google AI Overviews with brand authority and proven E-E-A-T.',
     url: 'https://www.polaristudio.com.br/en',
     type: 'website',
     images: [
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Home | Polaris Studio - Web Development Agency',
-    description: 'Welcome to Polaris Studio, your web development agency. We create unique and effective digital experiences for your business.',
+    title: 'Home | Polaris Studio - GEO & AEO Agency for the AI Era 2026',
+    description: 'Leading digital agency in Brazil specializing in GEO (Generative Engine Optimization) and AEO (Answer Engine Optimization). We optimize for ChatGPT, Bing Copilot and Google AI Overviews with brand authority and proven E-E-A-T.',
     images: ['/images/og-image.png'],
   },
 }

@@ -59,6 +59,15 @@ export function PortfolioSection() {
       tech: "Next.js / TypeScript / Prisma",
       url: "https://www.comanderoweb.shop/",
     },
+    {
+      titleKey: "portfolio.project6.title",
+      descKey: "portfolio.project6.desc",
+      image: "/portfolio-images/multitech.png",
+      fallbackImage: "/placeholder.svg",
+      category: "Technical Service",
+      tech: "Next.js / React / Tailwind",
+      url: "https://multi-tech-coral.vercel.app/",
+    },
   ]
 
   return (

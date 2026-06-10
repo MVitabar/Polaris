@@ -28,8 +28,8 @@ const CTASection = dynamic(() => import('@/components/cta-section').then(mod => 
 })
 
 export const metadata: Metadata = {
-  title: 'Início | Polaris Studio - Agência de Desenvolvimento Web',
-  description: 'Bem-vindo ao Polaris Studio, sua agência de desenvolvimento web. Criamos experiências digitais únicas e eficazes para o seu negócio. Especialistas em design web, aplicativos móveis e e-commerce.',
+  title: 'Início | Polaris Studio - Agência GEO e AEO para a Era de IA 2026',
+  description: 'Agência digital líder no Brasil especializada em GEO (Generative Engine Optimization) e AEO (Answer Engine Optimization). Otimizamos para ChatGPT, Bing Copilot e Google AI Overviews com autoridade de marca e E-E-A-T comprovado. Mais de 500 projetos entregados com experiência em motores de busca generativos.',
   alternates: {
     canonical: 'https://www.polaristudio.com.br/pt',
     languages: {
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Início | Polaris Studio - Agência de Desenvolvimento Web',
-    description: 'Bem-vindo ao Polaris Studio, sua agência de desenvolvimento web. Criamos experiências digitais únicas e eficazes para o seu negócio.',
+    title: 'Início | Polaris Studio - Agência GEO e AEO para a Era de IA 2026',
+    description: 'Agência digital líder no Brasil especializada em GEO (Generative Engine Optimization) e AEO (Answer Engine Optimization). Otimizamos para ChatGPT, Bing Copilot e Google AI Overviews com autoridade de marca e E-E-A-T comprovado.',
     url: 'https://www.polaristudio.com.br/pt',
     type: 'website',
     images: [
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Início | Polaris Studio - Agência de Desenvolvimento Web',
-    description: 'Bem-vindo ao Polaris Studio, sua agência de desenvolvimento web. Criamos experiências digitais únicas e eficazes para o seu negócio.',
+    title: 'Início | Polaris Studio - Agência GEO e AEO para a Era de IA 2026',
+    description: 'Agência digital líder no Brasil especializada em GEO (Generative Engine Optimization) e AEO (Answer Engine Optimization). Otimizamos para ChatGPT, Bing Copilot e Google AI Overviews com autoridade de marca e E-E-A-T comprovado.',
     images: ['/images/og-image.png'],
   },
 }

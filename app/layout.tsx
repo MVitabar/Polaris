@@ -6,6 +6,8 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Suspense } from "react"
+import OrganizationSchema from "./schema-organization"
+import ServicesSchema from "./schema-services"
 import "./globals.css"
 
 const poppins = Poppins({
@@ -26,8 +28,8 @@ export const metadata: Metadata = {
     default: 'Polaris Studio - Agencia de Desarrollo Web y Diseño Digital',
     template: '%s | Polaris Studio',
   },
-  description: 'Agencia de desarrollo web especializada en crear experiencias digitales extraordinarias. Ofrecemos diseño web profesional, desarrollo de aplicaciones móviles, e-commerce, landing pages y consultoría digital para transformar tu negocio.',
-  keywords: ['agencia de desarrollo web', 'diseño web profesional', 'desarrollo web Next.js', 'aplicaciones móviles a medida', 'e-commerce Brasil', 'landing pages', 'consultoría digital', 'desarrollo de sitios web', 'tiendas online', 'SEO y marketing digital', 'branding digital', 'mantenimiento web'],
+  description: 'Agencia digital líder en Brasil especializada en GEO (Generative Engine Optimization) y AEO (Answer Engine Optimization) para la era de IA 2026. Optimizamos para ChatGPT, Bing Copilot y Google AI Overviews. Autoridad de marca, E-E-A-T y contenido de alta calidad que genera resultados reales en motores de búsqueda generativos. Más de 500 proyectos entregados con experiencia comprobada.',
+  keywords: ['GEO generative engine optimization', 'AEO answer engine optimization', 'AI-first search', 'agencia digital 2026', 'SEO para motores de IA', 'ChatGPT SEO optimization', 'Bing Copilot optimization', 'autoridad de marca digital', 'E-E-A-T expertise', 'contenido generado por usuarios UGC', 'transformación digital con IA', 'desarrollo web Next.js 2026', 'optimización para AI Overviews', 'search intent avanzado', 'coherencia semántica SEO', 'local SEO Brasil', 'video content marketing', 'experiencia de usuario UX', 'e-commerce personalizado', 'consultoría digital estratégica', 'branding digital innovador', 'mantenimiento web profesional', 'desarrollo web responsive', 'optimización móvil', 'web performance', 'SEO técnico avanzado', 'marketing digital resultados', 'desarrollo de software a medida', 'integraciones API', 'automatización digital'],
   authors: [{ name: 'Polaris Studio' }],
   creator: 'Polaris Studio',
   publisher: 'Polaris Studio',
@@ -40,8 +42,8 @@ export const metadata: Metadata = {
     telephone: true,
   },
   openGraph: {
-    title: 'Polaris Studio - Agencia de Desarrollo Web y Diseño Digital',
-    description: 'Agencia de desarrollo web especializada en crear experiencias digitales extraordinarias. Ofrecemos diseño web profesional, desarrollo de aplicaciones móviles, e-commerce y consultoría digital.',
+    title: 'Polaris Studio - Agencia GEO y AEO para la Era de IA 2026',
+    description: 'Agencia digital líder en Brasil especializada en GEO (Generative Engine Optimization) y AEO (Answer Engine Optimization). Optimizamos para ChatGPT, Bing Copilot y Google AI Overviews con autoridad de marca y E-E-A-T comprobado.',
     url: 'https://www.polaristudio.com.br',
     siteName: 'Polaris Studio',
     images: [
@@ -57,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Polaris Studio - Agencia de Desarrollo Web y Diseño Digital',
-    description: 'Agencia de desarrollo web especializada en crear experiencias digitales extraordinarias. Ofrecemos diseño web profesional, desarrollo de aplicaciones móviles, e-commerce y consultoría digital.',
+    title: 'Polaris Studio - Agencia GEO y AEO para la Era de IA 2026',
+    description: 'Agencia digital líder en Brasil especializada en GEO (Generative Engine Optimization) y AEO (Answer Engine Optimization). Optimizamos para ChatGPT, Bing Copilot y Google AI Overviews con autoridad de marca y E-E-A-T comprobado.',
     images: ['/images/og-image.png'],
     creator: '@polarisstudio',
   },
@@ -108,6 +110,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <OrganizationSchema />
+        <ServicesSchema />
+      </head>
       <body className={`${poppins.variable} ${lora.variable} ${GeistMono.variable} antialiased`}>
         <Suspense fallback={<div>Loading...</div>}>
           {children}

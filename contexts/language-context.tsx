@@ -141,6 +141,8 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.project4.desc": "Sitio artístico abstracto con experiencia inmersiva, tienda de merch y contenido musical exclusivo",
     "portfolio.project5.title": "Comandero",
     "portfolio.project5.desc": "Sistema de gestión de pedidos para restaurantes con panel administrativo y seguimiento en tiempo real",
+    "portfolio.project6.title": "Multi-Tech",
+    "portfolio.project6.desc": "Asistencia técnica especializada en celulares y computadores con servicio de excelencia en Siderópolis, Brasil",
 
     // Process Section
     "process.tag": "Metodología",
@@ -295,6 +297,8 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.project4.desc": "Abstract artistic site with immersive experience, merch store, and exclusive music content",
     "portfolio.project5.title": "Comandero",
     "portfolio.project5.desc": "Restaurant order management system with admin panel and real-time tracking",
+    "portfolio.project6.title": "Multi-Tech",
+    "portfolio.project6.desc": "Specialized technical assistance for cell phones and computers with excellent service in Siderópolis, Brazil",
 
     // Process Section
     "process.tag": "Methodology",
@@ -450,6 +454,8 @@ const translations: Record<Language, Record<string, string>> = {
     "portfolio.project4.desc": "Site artístico abstrato com experiência imersiva, loja de merch e conteúdo musical exclusivo",
     "portfolio.project5.title": "Comandero",
     "portfolio.project5.desc": "Sistema de gestão de pedidos para restaurantes com painel administrativo e rastreamento em tempo real",
+    "portfolio.project6.title": "Multi-Tech",
+    "portfolio.project6.desc": "Assistência técnica especializada em celulares e computadores com atendimento de excelência em Siderópolis, Brasil",
 
     // Process Section
     "process.tag": "Metodologia",

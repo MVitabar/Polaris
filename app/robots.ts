@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/', '/private/'],
     },
-    sitemap: 'https://polaris-studio.vercel.app/sitemap.xml',
-    host: 'https://polaris-studio.vercel.app',
+    sitemap: 'https://www.polaristudio.com.br/sitemap.xml',
+    host: 'https://www.polaristudio.com.br',
   }
 }
