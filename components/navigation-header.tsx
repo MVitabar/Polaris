@@ -15,27 +15,39 @@ export function NavigationHeader() {
   const { t } = useLanguage()
 
   useEffect(() => {
+    let ticking = false
+
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      setIsScrolled(scrollY > 50)
+      if (ticking) return
+      ticking = true
 
-      // Scroll progress
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight
-      setScrollProgress(totalHeight > 0 ? (scrollY / totalHeight) * 100 : 0)
+      window.requestAnimationFrame(() => {
+        const scrollY = window.scrollY
+        const scrolled = scrollY > 50
+        if (scrolled !== isScrolled) setIsScrolled(scrolled)
 
-      // Active section detection
-      const sections = ["hero", "services", "portfolio", "process", "contact"]
-      for (const id of [...sections].reverse()) {
-        const el = document.getElementById(id)
-        if (el && scrollY >= el.offsetTop - 100) {
-          setActiveSection(id)
-          break
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight
+        const progress = totalHeight > 0 ? (scrollY / totalHeight) * 100 : 0
+        setScrollProgress((prev) => (Math.abs(prev - progress) < 0.5 ? prev : progress))
+
+        const sections = ["hero", "services", "portfolio", "process", "contact"]
+        let next = activeSection
+        for (const id of [...sections].reverse()) {
+          const el = document.getElementById(id)
+          if (el && scrollY >= el.offsetTop - 100) {
+            next = id
+            break
+          }
         }
-      }
+        if (next !== activeSection) setActiveSection(next)
+
+        ticking = false
+      })
     }
+
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [isScrolled, activeSection])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)

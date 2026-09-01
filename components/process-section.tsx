@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Search, Palette, Code2, Rocket } from "lucide-react"
+import { Search, Palette, Box, Rocket } from "lucide-react"
 import { ParallaxBackground } from "./parallax-background"
 import { ScrollReveal } from "./scroll-reveal"
 import { useLanguage } from "@/contexts/language-context"
@@ -21,7 +21,7 @@ export function ProcessSection() {
       descKey: "process.design.desc",
     },
     {
-      icon: Code2,
+      icon: Box,
       titleKey: "process.development.title",
       descKey: "process.development.desc",
     },

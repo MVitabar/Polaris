@@ -56,22 +56,22 @@ export function Footer() {
             <ul className="space-y-3 font-serif text-sm text-muted-foreground">
               <li>
                 <a href="#services" className="hover:text-primary transition-colors duration-200">
-                  {t("services.web_dev.title")}
+                  {t("services3d.capability.products.title")}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-primary transition-colors duration-200">
-                  {t("services.mobile_dev.title")}
+                  {t("services3d.capability.animation.title")}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-primary transition-colors duration-200">
-                  {t("services.ecommerce.title")}
+                  {t("services3d.capability.cgi.title")}
                 </a>
               </li>
               <li>
                 <a href="#services" className="hover:text-primary transition-colors duration-200">
-                  {t("services.branding.title")}
+                  {t("services3d.capability.branding.title")}
                 </a>
               </li>
             </ul>

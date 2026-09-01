@@ -5,11 +5,11 @@ export default function OrganizationSchema() {
     "name": "Polaris Studio",
     "url": "https://www.polaristudio.com.br",
     "logo": "https://www.polaristudio.com.br/images/logo-polaris.png",
-    "description": "Agencia digital líder en Brasil especializada en GEO (Generative Engine Optimization) y AEO (Answer Engine Optimization) para la era de IA 2026. Optimizamos para ChatGPT, Bing Copilot y Google AI Overviews con autoridad de marca y E-E-A-T comprobado.",
+    "description": "Estudio especializado en arte 3D y CGI con sede en Brasil. Creamos renders fotorrealistas, animación 3D, visualización de productos y composición CGI para marcas que buscan destacar en cualquier pantalla.",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "BR",
-      "addressRegion": "SP"
+      "addressRegion": "SC"
     },
     "contactPoint": {
       "@type": "ContactPoint",
@@ -52,26 +52,24 @@ export default function OrganizationSchema() {
       }
     ],
     "knowsAbout": [
-      "GEO Generative Engine Optimization",
-      "AEO Answer Engine Optimization",
-      "SEO para motores de IA",
-      "ChatGPT SEO optimization",
-      "Bing Copilot optimization",
-      "Google AI Overviews",
-      "Autoridad de marca digital",
-      "E-E-A-T expertise",
-      "Contenido generado por usuarios UGC",
-      "Desarrollo web Next.js",
-      "Transformación digital con IA",
-      "SEO técnico avanzado",
-      "E-commerce personalizado",
-      "Desarrollo de aplicaciones móviles",
-      "Experiencia de usuario UX",
-      "Marketing digital",
-      "Integraciones API",
-      "Automatización digital",
-      "Coherencia semántica SEO",
-      "Local SEO Brasil"
+      "Arte 3D",
+      "CGI",
+      "Render fotorrealista",
+      "Visualización de productos",
+      "Animación 3D",
+      "Composición CGI",
+      "Branding 3D",
+      "Modelado 3D",
+      "Texturizado 3D",
+      "Iluminación 3D",
+      "Motion graphics 3D",
+      "Blender",
+      "Cinema 4D",
+      "ZBrush",
+      "Octane Render",
+      "Publicidad 3D",
+      "Experiencia inmersiva",
+      "Desarrollo web 3D"
     ]
   }
 

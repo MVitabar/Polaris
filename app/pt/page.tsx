@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/hero-section"
 import { StatsBand } from "@/components/stats-band"
 import { ServicesSection } from "@/components/services-section"
+import { Services3DSection } from "@/components/services3d-section"
 import dynamic from 'next/dynamic'
 import { Footer } from "@/components/footer"
 import { NavigationHeader } from "@/components/navigation-header"
@@ -28,8 +29,8 @@ const CTASection = dynamic(() => import('@/components/cta-section').then(mod => 
 })
 
 export const metadata: Metadata = {
-  title: 'Início | Polaris Studio - Agência GEO e AEO para a Era de IA 2026',
-  description: 'Agência digital líder no Brasil especializada em GEO (Generative Engine Optimization) e AEO (Answer Engine Optimization). Otimizamos para ChatGPT, Bing Copilot e Google AI Overviews com autoridade de marca e E-E-A-T comprovado. Mais de 500 projetos entregados com experiência em motores de busca generativos.',
+  title: 'Polaris Studio | Estúdio de 3D e CGI - Rendering, Animação e Visualização',
+  description: 'Estúdio especializado em arte 3D e CGI: renders fotorrealistas, animação 3D, visualização de produtos e composição CGI para campanhas publicitárias. Mais de 40 projetos entregues com qualidade de estúdio internacional.',
   alternates: {
     canonical: 'https://www.polaristudio.com.br/pt',
     languages: {
@@ -40,8 +41,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Início | Polaris Studio - Agência GEO e AEO para a Era de IA 2026',
-    description: 'Agência digital líder no Brasil especializada em GEO (Generative Engine Optimization) e AEO (Answer Engine Optimization). Otimizamos para ChatGPT, Bing Copilot e Google AI Overviews com autoridade de marca e E-E-A-T comprovado.',
+    title: 'Polaris Studio | Estúdio de 3D e CGI - Rendering, Animação e Visualização',
+    description: 'Estúdio especializado em arte 3D e CGI: renders fotorrealistas, animação 3D, visualização de produtos e composição CGI para campanhas publicitárias.',
     url: 'https://www.polaristudio.com.br/pt',
     type: 'website',
     images: [
@@ -49,14 +50,14 @@ export const metadata: Metadata = {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Polaris Studio - Guiamos seu rumo digital',
+        alt: 'Polaris Studio - Estúdio de 3D e CGI',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Início | Polaris Studio - Agência GEO e AEO para a Era de IA 2026',
-    description: 'Agência digital líder no Brasil especializada em GEO (Generative Engine Optimization) e AEO (Answer Engine Optimization). Otimizamos para ChatGPT, Bing Copilot e Google AI Overviews com autoridade de marca e E-E-A-T comprovado.',
+    title: 'Polaris Studio | Estúdio de 3D e CGI - Rendering, Animação e Visualização',
+    description: 'Estúdio especializado em arte 3D e CGI: renders fotorrealistas, animação 3D, visualização de produtos e composição CGI para campanhas publicitárias.',
     images: ['/images/og-image.png'],
   },
 }
@@ -72,6 +73,9 @@ export default function Home() {
         <StatsBand />
         <div id="services">
           <ServicesSection />
+        </div>
+        <div id="services-3d">
+          <Services3DSection />
         </div>
         <div id="portfolio">
           <PortfolioSection />

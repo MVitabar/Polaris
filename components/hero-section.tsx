@@ -200,8 +200,8 @@ export function HeroSection() {
                 {/* Image */}
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
-                    src="/images/premium-hero-preview.png"
-                    alt="Proyecto desarrollado por Polaris Studio"
+                    src="/3d-art/hero-art.png"
+                    alt="Arte 3D creado por Polaris Studio"
                     width={800}
                     height={500}
                     priority
@@ -217,7 +217,7 @@ export function HeroSection() {
                 style={{ animationDelay: "0.5s" }}
               >
                 <Zap className="w-3.5 h-3.5" style={{ color: "var(--gold)" }} />
-                <span className="text-xs font-sans font-semibold text-foreground">Next.js 15</span>
+                <span className="text-xs font-sans font-semibold text-foreground">Blender</span>
               </div>
 
               <div
@@ -225,7 +225,7 @@ export function HeroSection() {
                 style={{ animationDelay: "1.5s" }}
               >
                 <CheckCircle2 className="w-3.5 h-3.5" style={{ color: "#22c55e" }} />
-                <span className="text-xs font-sans font-semibold text-foreground">100% Custom</span>
+                <span className="text-xs font-sans font-semibold text-foreground">Render Fotorrealista</span>
               </div>
 
               <div
